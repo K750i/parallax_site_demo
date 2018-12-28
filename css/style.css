@@ -12,7 +12,20 @@ h1 {
 
 .clothes-pics {
   display: flex;
+  margin-bottom: 150px;
   flex-flow: column nowrap;
+}
+
+.clothes-pics figcaption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 8px;
+  left: -100%;
+  transition: all .2s ease-out;
 }
 
 .img-row {
@@ -25,6 +38,21 @@ figure {
   transform: translateX(20px);
   transition: all 300ms ease-in-out;
   position: relative;
+  overflow: hidden;
+}
+
+figure:hover img {
+  transform: scale(1.1);
+}
+
+figure:hover figcaption {
+  left: 0;
+}
+
+figure img {
+  vertical-align: bottom;
+  transform: scale(1);
+  transition: all .2s ease-in-out;
 }
 
 .content article {
