@@ -3,6 +3,7 @@ var backBird = document.querySelector('.back-bird');
 var foreBird = document.querySelector('.fore-bird');
 var container = document.querySelector('.clothes-pics');
 var figure = document.querySelectorAll('.clothes-pics figure');
+var periscope = document.querySelector('.large-window .img');
 
 window.addEventListener('scroll', () => {
   var vScroll = window.pageYOffset;
@@ -15,5 +16,9 @@ window.addEventListener('scroll', () => {
     figure.forEach(function(item, index) {
       setTimeout(() => item.classList.add('is-showing'), 100 * index);
     });
+  }
+
+  if (vScroll > periscope.offsetTop - window.innerHeight) {
+    periscope.style.backgroundPosition = `center ${vScroll}px`;
   }
 });
