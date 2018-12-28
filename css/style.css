@@ -133,7 +133,7 @@ figure.is-showing {
   height: 640px;
   background-image: url('/images/model2.jpg');
   background-position: center 0px;
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -178,4 +178,8 @@ figure.is-showing {
 .window-cta:hover {
   background-color: #fff;
   color: #000;
+}
+
+.window-tint {
+  opacity: 0;
 }
