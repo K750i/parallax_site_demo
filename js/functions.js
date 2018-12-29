@@ -37,11 +37,10 @@ function checkScroll() {
   }
 
   var breakpoint = periscope.parentElement.offsetTop - window.innerHeight;
-  var opacity = (vScroll - breakpoint) / (vScroll / 3);
+  var opacity = parseFloat((vScroll - breakpoint) / (vScroll / 3)).toFixed(2);
 
   if (vScroll > breakpoint) {
-    console.log(vScroll - breakpoint);
-    periscope.style.backgroundPosition = `center ${(vScroll / 1.5) - breakpoint}px`;
+    periscope.style.backgroundPosition = `center ${Math.round((vScroll / 1.5) - breakpoint)}px`;
     windowTint.style.opacity = `${opacity}`;
   } 
 }

@@ -183,3 +183,31 @@ figure.is-showing {
 .window-tint {
   opacity: 0;
 }
+
+/* posts */
+
+.blog-posts {
+  margin-top: 50px;
+  margin-left: -200px;
+  width: 960px;
+  display: flex;
+}
+
+.blog-posts .post {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  margin: 5px;
+}
+
+.blog-posts h5 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin: 10px 0 10px;
+}
+
+.post .button {
+  text-decoration: none;
+  color: #555;
+  border: 1px solid #999;
+  padding: 10px 30px;
+}
