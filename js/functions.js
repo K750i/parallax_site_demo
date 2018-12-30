@@ -6,6 +6,10 @@ var container = document.querySelector('.clothes-pics');
 var figure = document.querySelectorAll('.clothes-pics figure');
 var periscope = document.querySelector('.large-window .img');
 var windowTint = document.querySelector('.window-tint');
+var blogPost = document.querySelector('.blog-posts');
+var post2 = document.querySelector('.post-1');
+var post1 = document.querySelector('.post-2');
+var post3 = document.querySelector('.post-3');
 
 function debounce(func, wait = 20, immediate = true) {
   var timeout;
@@ -36,13 +40,22 @@ function checkScroll() {
     });
   }
 
-  var breakpoint = periscope.parentElement.offsetTop - window.innerHeight;
-  var opacity = parseFloat((vScroll - breakpoint) / (vScroll / 3)).toFixed(2);
+  var periscopebreakpoint = periscope.parentElement.offsetTop - window.innerHeight;
+  var blogPostbreakpoint = blogPost.offsetTop - window.innerHeight;
+  var opacity = parseFloat((vScroll - periscopebreakpoint) / (vScroll / 3)).toFixed(2);
 
-  if (vScroll > breakpoint) {
-    periscope.style.backgroundPosition = `center ${Math.round((vScroll / 1.5) - breakpoint)}px`;
+  if (vScroll > periscopebreakpoint) {
+    periscope.style.backgroundPosition = `center ${Math.round((vScroll / 1.5) - periscopebreakpoint)}px`;
     windowTint.style.opacity = `${opacity}`;
-  } 
+  }
+
+  if (vScroll > blogPostbreakpoint) {
+    let offset = Math.min(0, vScroll - blogPost.offsetTop + window.innerHeight - 350);
+    console.log(offset);
+    
+    post2.style.transform = `translate(${offset}px, ${Math.abs(offset * .2)}px)`;
+    post3.style.transform = `translate(${Math.abs(offset)}px, ${Math.abs(offset * .2)}px)`;
+  }
 }
 
 window.addEventListener('scroll', debounce(checkScroll, 15));
